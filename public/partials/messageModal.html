@@ -1,0 +1,24 @@
+<div class="ui modal message">
+  <i class="close icon"></i>
+  <div class="header" ng-show="modalRole == 'add'">Add Message</div>
+  <div class="header" ng-show="modalRole == 'edit'">Edit Message</div>
+  <div class="header" ng-show="modalRole == 'delete'">Delete Message</div>
+  <div class="content">
+    <form class="ui form" ng-show="modalRole == 'add' || modalRole == 'edit'">
+      <h4 class="ui dividing header" ng-show="modalRole == 'add'">Add a new message</h4>
+      <h4 class="ui dividing header" ng-show="modalRole == 'edit'">Edit message</h4>
+      <div class="field">
+        <label>Message</label>
+        <textarea ng-model="messageBody"></textarea>
+      </div>
+    </form>
+    <p ng-show="modalRole == 'delete'">Are you sure you want to delete this message?</p>
+  </div>
+  <div class="actions">
+    <button class="ui button" ng-click="closeModal" ng-show="modalRole == 'add' || modalRole == 'edit'"><i class="icon erase"></i>Cancel</button>
+    <button class="ui positive button" ng-show="modalRole == 'add'" ng-click="addMessage()"><i class="icon send"></i>Add</button>
+    <button class="ui positive button" ng-show="modalRole == 'edit'" ng-click="editMessage()"><i class="icon send"></i>Save</button>
+    <button class="ui positive button" ng-show="modalRole == 'delete'" ng-click="deleteMessage()"><i class="icon checkmark"></i>Yes</button>
+    <button class="ui negative button" ng-show="modalRole == 'delete'" ng-click="closeModal()"><i class="icon remove"></i>No</button>
+  </div>
+</div>

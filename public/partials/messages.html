@@ -1,0 +1,16 @@
+<div class="ui segment">
+  <div class="ui divided list">
+    <div ng-repeat="message in messages" class="item">
+      <div class="ui buttons right floated">
+        <button ng-click="editMessage(message)" class="ui button"><i class="edit icon"></i>Edit</button>
+        <div class="or"></div>
+        <button ng-click="deleteMessage(message)" class="ui button negative"><i class="erase icon"></i>Delete</button>
+      </div>
+      <div class="content">
+        <p>{{message.content}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="ui button right positive floated" ng-click="addMessage()"><i class="write icon"></i>Add Message</button>
+<message-modal></message-modal>
