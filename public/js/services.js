@@ -6,6 +6,9 @@ app.factory('messageService', ['$http', function($http){
     return $http.get('/messages').success(function(data){
     	console.log(data);
       angular.copy(data, o.messages);
+    })
+    .error(function(data){
+
     });
   };
   o.create = function(message) {
@@ -15,7 +18,7 @@ app.factory('messageService', ['$http', function($http){
   };
   o.delete = function(id){
   	return $http.get('/messages/delete/' + id).success(function(data){
-  		//o.messages.splice(data, );
+  		o.messages.splice(data,1);
   	});
   }
   return o;
