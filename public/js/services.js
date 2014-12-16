@@ -15,7 +15,7 @@ app.factory('messageService', ['$http', function($http){
   };
   o.delete = function(id){
   	return $http.get('/messages/delete/' + id).success(function(data){
-  		o.messages.splice(data);
+  		//o.messages.splice(data, );
   	});
   }
   return o;
