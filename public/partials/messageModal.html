@@ -16,9 +16,9 @@
   </div>
   <div class="actions">
     <button class="ui button" ng-click="closeModal" ng-show="modalRole == 'add' || modalRole == 'edit'"><i class="icon erase"></i>Cancel</button>
-    <button class="ui positive button" ng-show="modalRole == 'add'" ng-click="addMessage()"><i class="icon send"></i>Add</button>
-    <button class="ui positive button" ng-show="modalRole == 'edit'" ng-click="editMessage()"><i class="icon send"></i>Save</button>
-    <button class="ui positive button" ng-show="modalRole == 'delete'" ng-click="deleteMessage()"><i class="icon checkmark"></i>Yes</button>
+    <button class="ui positive button" ng-show="modalRole == 'add'" ng-click="submit()"><i class="icon send"></i>Add</button>
+    <button class="ui positive button" ng-show="modalRole == 'edit'" ng-click="edit()"><i class="icon send"></i>Save</button>
+    <button class="ui positive button" ng-show="modalRole == 'delete'" ng-click="delete(messageID)"><i class="icon checkmark"></i>Yes</button>
     <button class="ui negative button" ng-show="modalRole == 'delete'" ng-click="closeModal()"><i class="icon remove"></i>No</button>
   </div>
 </div>

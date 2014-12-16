@@ -15,8 +15,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     	templateUrl: "/partials/messages.html",
     	controller: 'messagesCtrl',
     	resolve: {
-		  messagePromise: ['messages', function(messages){
-		    return messages.getAll();
+		  postPromise: ['messageService', function(messageService){
+		    return messageService.getAll();
 		  }]
 		}
     })

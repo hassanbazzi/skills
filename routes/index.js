@@ -23,10 +23,20 @@ router.get('/messages', function(req, res, next) {
 
 router.post('/messages', function(req, res, next) {
   var message = new Message(req.body);
-
+  console.log(message);
   message.save(function(err, message){
     if(err){ return next(err); }
 
     res.json(message);
   });
+});
+router.get('/messages/delete/:id', function(req, res) {
+	Message.remove({
+		_id: req.params.id
+	}, function(err, message) {
+		if (err)
+			res.send(err);
+
+		res.json({ message: 'Successfully deleted' });
+	});
 });

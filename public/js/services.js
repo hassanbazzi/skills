@@ -3,14 +3,20 @@ app.factory('messageService', ['$http', function($http){
     messages: []
   };
   o.getAll = function() {
-  	return $http.get('/messages').success(function(data){
-  		angular.copy(data, o.messages);
+    return $http.get('/messages').success(function(data){
+    	console.log(data);
+      angular.copy(data, o.messages);
     });
   };
   o.create = function(message) {
-  	return $http.post('/messages/post', message).success(function(data){
+  	return $http.post('/messages', message).success(function(data){
   		o.messages.push(data);
   	});
   };
+  o.delete = function(id){
+  	return $http.get('/messages/delete/' + id).success(function(data){
+  		o.messages.splice(data);
+  	});
+  }
   return o;
 }]);

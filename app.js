@@ -60,4 +60,3 @@ app.use(function(err, req, res, next) {
 
 // Setting up Mongoose
 module.exports = app;
-console.log('reached end');
