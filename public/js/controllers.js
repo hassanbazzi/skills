@@ -27,5 +27,4 @@ app.controller('messagesCtrl', ['$scope', 'messageService', function($scope, mes
 	$scope.delete = function(id){
 		messageService.delete(id);
 	}
-
 }]);
